@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Sistema de Gestión de Clientes</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="marca">
+        <h1>Gestión de Clientes</h1>
+        <p>Módulo de clientes</p>
+      </div>
+      <p class="contador" id="contador">0 clientes registrados</p>
+    </header>
+
+    <main class="contenido">
+      <section class="panel" aria-labelledby="titulo-formulario">
+        <h2 id="titulo-formulario">Registrar cliente</h2>
+        <form id="form-cliente" class="formulario" novalidate>
+          <div class="campo">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" autocomplete="organization" aria-describedby="error-empresa" />
+            <small class="mensaje-error" id="error-empresa"></small>
+          </div>
+
+          <div class="campo">
+            <label for="contacto">Contacto</label>
+            <input type="text" id="contacto" name="contacto" autocomplete="name" aria-describedby="error-contacto" />
+            <small class="mensaje-error" id="error-contacto"></small>
+          </div>
+
+          <div class="campo">
+            <label for="cargo">Cargo</label>
+            <select id="cargo" name="cargo" aria-describedby="error-cargo">
+              <option value="">Selecciona un cargo</option>
+              <option>Propietario</option>
+              <option>Gerente general</option>
+              <option>Gerente de ventas</option>
+              <option>Representante de ventas</option>
+              <option>Agente de compras</option>
+              <option>Gerente de marketing</option>
+              <option>Gerente de contabilidad</option>
+              <option>Asistente de ventas</option>
+            </select>
+            <small class="mensaje-error" id="error-cargo"></small>
+          </div>
+
+          <div class="campo">
+            <label for="ciudad">Ciudad</label>
+            <input type="text" id="ciudad" name="ciudad" autocomplete="address-level2" aria-describedby="error-ciudad" />
+            <small class="mensaje-error" id="error-ciudad"></small>
+          </div>
+
+          <div class="campo">
+            <label for="pais">País</label>
+            <select id="pais" name="pais" aria-describedby="error-pais">
+              <option value="">Selecciona un país</option>
+              <option>México</option>
+              <option>Argentina</option>
+              <option>Colombia</option>
+              <option>Chile</option>
+              <option>España</option>
+              <option>Estados Unidos</option>
+              <option>Venezuela</option>
+              <option>Perú</option>
+            </select>
+            <small class="mensaje-error" id="error-pais"></small>
+          </div>
+
+          <div class="campo">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" autocomplete="tel" placeholder="+52 55 1234 5678" aria-describedby="error-telefono" />
+            <small class="mensaje-error" id="error-telefono"></small>
+          </div>
+
+          <button type="submit" class="boton">Registrar cliente</button>
+        </form>
+        <p id="mensaje-general" class="mensaje-general" role="status" aria-live="polite" hidden></p>
+      </section>
+
+      <section class="panel" aria-labelledby="titulo-listado">
+        <h2 id="titulo-listado">Clientes registrados</h2>
+        <div id="lista-clientes" class="lista-clientes"></div>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <p>Sistema de Gestión de Clientes · 2026</p>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
